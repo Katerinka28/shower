@@ -22,10 +22,8 @@
         <h2>Типы данных и особенности работы с ними</h2>
         <p>Brought to you by <a href="">Kateryna Dmytriieva</a></p>
         <figure>
-            <img class="cover" src="pictures/fotooboi-shesterenki-10517.jpg" alt="js cover image">
-            {# <figcaption class="copyright right white"> #}
-                {# <a href="https://meline.lviv.ua/development/front-end/core-js-interview/">© Meline</a> #}
-            {# </figcaption> #}
+            <img class="cover" src="pictures/mehanizm-shesterenki-pruzhiny (1).jpg" alt="js cover image">
+            
         </figure>
         <style>
             #cover h2 {
@@ -33,7 +31,7 @@
                 color: white;
                 text-align: center;
                 font-size: 70px;
-            }
+                text-shadow: 4px 5px 17px black;            }
 
             #cover p {
                 margin: 10px 0 0;
@@ -41,6 +39,7 @@
                 color: white;
                 font-style: italic;
                 font-size: 20px;
+                text-shadow: 4px 5px 17px black;
             }
 
             #cover p a {
@@ -50,144 +49,278 @@
     </section>
 
     <section class="slide">
-        <h2>Shower key features</h2>
+        <h2>JavaScript определяет 7 типов данных:</h2>
         <ol>
-            <li>Built on HTML, CSS and JavaScript</li>
-            <li>Works in all modern browsers</li>
-            <li>Themes are separated from engine</li>
-            <li>Fully keyboard accessible</li>
-            <li>Printable to PDF</li>
+            <li>null</li>
+            <li class="next">undefined</li>
+            <li class="next">boolean</li>
+            <li class="next">string</li>
+            <li class="next">number</li>
+            <li class="next">object</li>
+            <li class="next">symbol (добавлен в ES6)</li>
         </ol>
-        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+        <p class="note">Все типы данных кроме объектов (objects) — примитивные. </p>
     </section>
-
     <section class="slide">
-        <h2>Plain text on your slides</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-    </section>
-
-    <section class="slide">
-        <h2>Two columns if you like</h2>
-        <div class="columns two">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-        </div>
-    </section>
-
-    <section class="slide">
-        <h2>All kind of lists</h2>
-        <ol>
-            <li>Simple lists are marked with bullets</li>
-            <li>Ordered lists begin with a number</li>
-            <li>You can even nest lists one inside another
-                <ul>
-                    <li>Or mix their types</li>
-                    <li>But do not go too far</li>
-                    <li>Otherwise audience will be bored</li>
-                </ul>
-            </li>
-            <li>Look, seven rows exactly!</li>
-        </ol>
-    </section>
-
-    <section class="slide">
-        <h2>Serious citations</h2>
-        <figure>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-            </blockquote>
-            <figcaption>Marcus Tullius Cicero</figcaption>
-        </figure>
-    </section>
-
-    <section class="slide">
-        <h2>Code samples</h2>
+        <h2>Symbol как скрытый идентификатор</h2>
+        
+        <p class="note">Символы создаются вызовом функции Symbol(), в которую можно передать описание (имя) символа. Он уникален.</p>
         <pre>
-            <code>&lt;!DOCTYPE html&gt;</code>
-            <code class="mark">&lt;html lang="en"&gt;</code>
-            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-            <code><mark>&lt;/head&gt;</mark></code>
+            <code> let id = Symbol("id") </code>
+            <code> let user = { </code>
+            <code>     name: "Вася", </code>
+            <code>     age: 30, </code>
+            <code>     [id]: 'unique hidden identifier'</code>   
+            <code> }; </code>
         </pre>
     </section>
-
     <section class="slide">
-        <h2>Even tables</h2>
-        <table>
-        <tr>
-            <th scope="col">Locavore</th>
-            <th>Umami</th>
-            <th>Helvetica</th>
-            <th>Vegan</th>
-        </tr>
-        <tr>
-            <th scope="row">Fingerstache</th>
-            <td>Kale</td>
-            <td>Chips</td>
-            <td>Keytar</td>
-        </tr>
-        <tr>
-            <th scope="row">Sriracha</th>
-            <td>Gluten-free</td>
-            <td>Ennui</td>
-            <td>Keffiyeh</td>
-        </tr>
-        <tr>
-            <th scope="row">Thundercats</th>
-            <td>Jean</td>
-            <td>Shorts</td>
-            <td>Biodiesel</td>
-        </tr>
-        <tr>
-            <th scope="row">Terry</th>
-            <td>Richardson</td>
-            <td>Swag</td>
-            <td>Blog</td>
-        </tr>
-        </table>
-        <p>It’s good to have information organized.</p>
+        <h2>Symbol как скрытый идентификатор</h2>
+        
+        <p class="note"> Symbol при итерации через Object.keys(), for будет скрыт.  А вот Object.assign, в отличие от цикла for..in, копирует и строковые, и символьные свойства:</p>
+        <p class="note"> Технически символы скрыты не на 100%. С помощью Object.getOwnPropertySymbols(obj) можно получить все свойства объекта с ключами-символами. Также существует метод Reflect.ownKeys(obj), который возвращает все ключи объекта, включая символьные.</p>
+       
     </section>
-
-    <section class="slide" id="picture">
-        <h2>Pictures</h2>
-        <figure>
-            <img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-            <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
-            </figcaption>
-        </figure>
-        <style>
-            #picture h2 {
-                color: white;
-            }
-        </style>
-    </section>
-
+    
     <section class="slide">
-        <h2 class="shout shrink">You can even shout this way</h2>
+        <h2>Оператор typeof</h2>
+        <p>С помощью оператора typeof можно получить тип переменной:
+        </p>
+        <pre>
+            <code>let name = "Tom"</code>
+            <code>console.log(typeof name); // string</code>
+        </pre>
+        <pre>
+            <code>let income = 45.8</code>
+            <code>console.log(typeof income) // number</code>
+        </pre>
     </section>
-
     <section class="slide">
-        <h2>Inner navigation</h2>
-        <ol>
-            <li>Lets you reveal list items one by one</li>
-            <li class="next">To keep some key points</li>
-            <li class="next">In secret from audience</li>
-            <li class="next">But it will work only once</li>
-            <li class="next">Nobody wants to see the same joke twice</li>
-        </ol>
+        <h2>Примитивные типы</h2>
+        <p>Все типы данных в JavaScript, кроме объектов, являются неизменяемыми или иммутабельными (англ. immutable). Это значит, что их значения не могут быть модифицированы, а только перезаписаны новым другим значением. Например, строки нельзя корректировать посимвольно – их можно переписать только полностью. Значения таких типов называются "примитивными".
+        </p>
     </section>
+    <section class="slide">
+        <h2>Массивы также имеют тип данных object</h2>
+        <p>Фактически массивы и есть объекты с той лишь разницей, что свойства массива являются нумерованными индексами.
+        </p>
+            <pre>
+            <code>typeof [1,2,3] === “object”; // true</code>
+            
+        </pre>
+    </section>
+    <section class="slide">
+        <h2>В JavaScript всё ведет себя, как объект, лишь за двумя исключениями — null и undefined.</h2>
+
+            <pre>
+            <code>false.toString(); // 'false'</code>
+            <code>[1, 2, 3].toString(); // '1,2,3'</code>
+            <code>function Foo(){}</code>
+            <code>Foo.bar = 1;</code>
+            <code> Foo.bar; // 1</code>
+        </pre>
+    </section>
+    <section class="slide">
+        <h2>Number тоже можно использовать в качестве обьектов</h2>
+            <pre>
+            <code>2.toString(); // вызывает SyntaxError</code>
+        </pre>
+        <p>
+            Есть несколько способов обойти этот недостаток и любой из них можно использовать для того, чтобы работать с числами, как с объектами: 
+        </p>
+        <pre>
+            <code>2..toString(); // вторая точка распознаётся корректно</code>
+            <code>2 .toString(); // обратите внимание на пробел перед точкой</code>
+            <code>(2).toString(); // двойка вычисляется заранее</code>
+        </pre>
+    </section>
+    <section class="slide">
+        <h2>Значения Number</h2>
+        <p>
+            Числовые литералы number могут быть выражены в других формах, таких как, двоичная, восьмеричная, и шестнадцатеричная.
+        </p>
+        <p>
+            Кроме того, JavaScript содержит специальные числовые значения:
+        </p>
+        <ul>
+            <li>
+                <code> NaN</code> -- не число или ошибка вычислений 
+            </li>
+            <li>
+                <code> Infinity</code> -- положительная бесконечность (1 / 0)
+            </li>
+            <li>
+                <code> -Infinity</code> -- отрицательная бесконечность (-1 / 0)
+            </li>
+            <li>
+                <code> ±0</code> -- положительный и отрицательный 0 (0 / -1 || 0 * -1)
+            </li>
+        </ul>
+    </section>
+    <section class="slide">
+        <h2 class="shout shrink">0.1 + 0.2 === 0.3 // false</h2>
+    </section>
+    <section class="slide">
+        <h2>Маленькие дробные числа</h2>
+        <p>Математически, что результатом выражения должно быть true. Почему же в результате получается false? </p>
+        <p>Если по-простому, представления чисел 0.1 и 0.2 в бинарном виде с плавающей точкой не совсем точные, поэтому когда мы их складываем, результат не совсем 0.3. Это действительно близко: 0.30000000000000004, но если сравнение не прошло, "близко" уже не имеет значения.</p>
+        <h5>Как быть, спросишь ты? Или не спросишь. Но я отвечу</h5>
+    </section>   
+    <section class="slide">
+            <h2> Number.EPSILON </h2>
+            <p> Самая общепринятая практика использование миниатюрной "ошибки округления" как допуска для сравнения.<br> Это малюсенькое значение часто называют "машинной эпсилон," которое составляет 2^-52 (2.220446049250313e-16) для числового типа number в JavaScript.
+            </p>
+                
+            
+        </section>   
+    <section class="slide">
+            <h2> Number.EPSILON </h2>
+            
+                <pre>
+                <code>function numbersCloseEnoughToEqual(n1,n2) {</code>
+                <code>    return Math.abs( n1 - n2 ) < Number.EPSILON;</code>
+                <code>}</code>
+                <code>let a = 0.1 + 0.2</code>
+                <code>let b = 0.3</code>
+                <code>numbersCloseEnoughToEqual( a, b ) // true</code>
+            </pre>
+            
+        </section>   
+    <section class="slide">
+            <h2 class="shout shrink"> У переменных нет типа — тип есть у значений</h2>
+        </section>
+    <section class="slide">
+        <h2>null VS undefined</h2>
+        <p>Переменная без присвоения ей начального значения - <strong> undefined </strong>
+        </p>
+            <pre>
+            <code>var isAlive;</code>
+            <code>console.log(isAlive); // выведет undefined</code>
+        </pre>
+        
+    </section>    
+    <section class="slide">
+        <h2>null VS undefined</h2>
+        
+        <p>Переменная имеет некоторое неопределенное значение (не число, не строка, не логическое значение), но все-таки имеет значение- <strong> null </strong>
+        </p>
+            <pre>
+            <code>isAlive = null;</code>
+            <code>console.log(isAlive); // null</code>
+        </pre>
+    </section>    
+ 
+    <section class="slide">
+        <h2>Тип данных Object</h2>
+        
+        <p>Объект состоит из многих значений (либо элементарных, таких как числа и строки, либо сложных, например других объектов), которые называются свойствами объекта. Доступ к свойствам осуществляется по имени свойства (иногда говорят «по ключу»).
+        </p>
+    </section>    
+        
+        
+    <section class="slide">
+        <h2>Доступ к свойствам</h2>
+        
+        <p>Получить доступ к свойствам объекта можно двумя способами: используя либо точечную нотацию, либо запись квадратными скобками.
+        </p>
+            <pre>
+            <code>let someNewObject = {name: 'kitten'}</code>
+            <code>foo.name; // kitten</code>
+            <code>foo['name']; // kitten </code>
+            <code>var get = 'name';</code>
+            <code>foo[get]; // kitten</code>
+            
+        </pre>
+    </section>    
+    
+    <section class="slide">
+        <h2>Строки VS массивы</h2>
+        
+        <p>Строки имеют поверхностное сходство с массивами для них работают свойство .length, методы .indexOf() .concat(). </p>
+        <p>Строки в JavaScript неизменяемы, тогда как массивы могут меняться. Для строки нет методов, которые меняют ее содержимое на месте, метод лучше создаст новую строку и вернет ее нам.</p>
+    </section>    
+    <section class="slide">
+        <h2>Строки VS массивы</h2>
+        <ul>
+            <li>
+                <pre>
+                    <code>let a = "someVal"</code>
+                    <code>let b = ["s","o","m","e","V","a","l"]</code>
+
+                </pre>
+            </li>
+            <p> </p>
+        </ul>
+    </section>    
+    <section class="slide">
+        <h2>Клоны переменных</h2>
+        <p> Простые величины null, undefined, string, number, boolean, и ES6’s symbol всегда копируются по значению. </p>
+        <pre>
+            <code> let a = 2 </code>
+            <code> let b = a </code>
+            <code> b++ </code>
+            <code> console.log(a, b)
+                <span class='next'>// 2, 3</span>
+            </code>
+        </pre>
+
+    </section>    
+    <section class="slide">
+        <h2>Клоны переменных</h2>
+        <p> Сложные величины объекты (в том числе массивы) и функции всегда копируются по ссылке.</p>
+        <pre>
+            <code> let c = [1,2,3] </code>
+            <code> let d = c </code>
+            <code> d.push( 4 ) </code>
+            <code> console.log(c, d)
+                <span class='next'>// [1,2,3,4]</span>
+            </code>
+        </pre>
+    </section>    
+    <section class="slide">
+        <h2>Итересные интересности</h2>
+        <p> Угадай результат </p>
+        <ul>
+            <li> Infinity / Infinity
+                <strong class='next'>// NaN</strong>
+            </li>
+            <li class='next'> typeof null
+                <strong class='next'>// object</strong>
+            </li>
+            <li class='next'> -0 === 0
+                <strong class='next'>// true</strong>
+            </li>
+        </ul>        
+    </section>    
+    <section class="slide">
+        <h2>Встроенные функции</h2>
+        <div class="columns two"> 
+            <ul>
+                <li>String()</li>
+                <li>Number()</li>
+                <li>Boolean()</li>
+                <li>Array()</li>        
+                <li>Object()</li>        
+            </ul>
+            <ul>
+                <li>Function()</li>        
+                <li>RegExp()</li>        
+                <li>Date()</li>        
+                <li>Error()</li>        
+                <li>Symbol()</li>        
+            </ul>
+        </div>
+    </section> 
+
 
     <section class="slide" id="see-more">
         <h2 class="shout">
-            <img src="pictures/logo.svg" alt="Shower logo">
-            <a href="https://github.com/shower/shower">See more on GitHub</a>
+            {# <img src="pictures/logo.svg" alt="Shower logo"> #}
+            <a href="https://github.com/shower/shower"> Спасибо за внимание</a>
         </h2>
         <style>
             #see-more h2 {
-                font-size: 100px
+                font-size: 80px
             }
 
             #see-more img {
